@@ -1,0 +1,10 @@
+RewriteEngine On
+#RewriteCond %{HTTP_HOST} ^(www.platanitos.com|platanitos.co|www.platanitos.co|platanitos.com.pe|www.platanitos.com.pe|platanitos.pe|www.platanitos.pe)$
+#RewriteRule .* http://platanitos.com [R,L]
+#RewriteCond %{HTTP_HOST} ^(www.activaexpress.com|activaexpress.com.pe|www.activaexpress.com.pe)$
+#RewriteRule .* http://activaexpress.com [R,L]
+RewriteCond %{HTTPS} on
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI}
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php
